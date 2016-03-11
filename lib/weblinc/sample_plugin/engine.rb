@@ -5,7 +5,22 @@ module Weblinc
       isolate_namespace Weblinc::SamplePlugin
 
       initializer 'weblinc.sample_plugin' do
-        # configure and customize WebLinc here
+
+        Plugin.append_partials(
+          'admin.edit_product_relations',
+          'weblinc/admin/catalog_products/sample_product_append'
+        )
+
+        Plugin.append_partials(
+          'admin.edit_product',
+          'weblinc/admin/catalog_products/sample_product_form'
+        )
+
+        Plugin.append_partials(
+          'store_front.product_show',
+          'weblinc/store_front/products/sample_product_append'
+        )
+
       end
     end
   end

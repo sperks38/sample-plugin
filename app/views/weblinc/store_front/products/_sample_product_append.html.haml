@@ -1,0 +1,7 @@
+- if product.sample_header.present? || product.sample_text.present?
+  .sample-plugin
+    - if product.sample_header.present?
+      %h3.sample-plugin__header= product.sample_header
+    - if product.sample_text.present?
+      .sample-plugin__content
+        %p= product.sample_text
